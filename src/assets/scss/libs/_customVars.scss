@@ -1,0 +1,28 @@
+// Palette.
+$palette: (
+  bg:					#fff,
+  fg:					#a2a2a2,
+  fg-bold:			#787878,
+  fg-light:			#b2b2b2,
+  border:				#efefef,
+  border-bg:			#f7f7f7,
+  border2:			#dfdfdf,
+  border2-bg:			#e7e7e7,
+
+  accent1: (
+    bg:				#4173B3,
+    fg:				mix(#4173B3, #ffffff, 25%),
+    fg-light:		mix(#4173B3, #ffffff, 40%)
+  ),
+
+  accent2: (
+    bg:				#1f1815,
+    fg:				rgba(255,255,255,0.5),
+    fg-bold:		#ffffff,
+    fg-light:		rgba(255,255,255,0.4),
+    border:			rgba(255,255,255,0.25),
+    border-bg:		rgba(255,255,255,0.075),
+    border2:		rgba(255,255,255,0.5),
+    border2-bg:		rgba(255,255,255,0.2)
+  )
+);

@@ -1,0 +1,36 @@
+/* Header */
+
+#header {
+  background-color:		#444444;
+  background-image:		none;
+  background-position:	top left,							top left;
+  background-repeat:		repeat,								no-repeat;
+  background-size:		auto,								150%;
+
+  p {
+    font-size: 0.8em;
+    margin: 0;
+  }
+}
+
+/* Footer */
+
+#footer {
+  background: transparent;
+}
+
+/* Image */
+
+.image {
+  &.avatar {
+    img {
+      background: #ffffff;
+    }
+  }
+}
+
+/* Basic */
+
+a {
+  border-bottom: none;
+}
