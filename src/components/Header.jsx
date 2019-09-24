@@ -1,6 +1,11 @@
 import React from 'react'
 import Img from "gatsby-image"
 import { graphql, useStaticQuery } from 'gatsby'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faTwitter, faGithub, faFacebook, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+library.add(faTwitter, faGithub, faFacebook, faLinkedin)
 
 const Header = ({ user }) => {
   const data = useStaticQuery(graphql`
@@ -31,35 +36,23 @@ const Header = ({ user }) => {
         <div className="inner">
           <ul className="icons">
             <li>
-              <a
-                href={`https://twitter.com/${user.twitter}`}
-                className="icon fa-twitter"
-              >
-                <span className="label">Twitter</span>
+              <a href={`https://twitter.com/${user.twitter}`}>
+                <FontAwesomeIcon icon={['fab', 'twitter']} />
               </a>
             </li>
             <li>
-              <a
-                href={`https://github.com/${user.github}`}
-                className="icon fa-github"
-              >
-                <span className="label">Github</span>
+              <a href={`https://github.com/${user.github}`}>
+                <FontAwesomeIcon icon={['fab', 'github']} />
               </a>
             </li>
             <li>
-              <a
-                href={`https://www.facebook.com/${user.facebook}`}
-                className="icon fa-facebook"
-              >
-                <span className="label">Facebook</span>
+              <a href={`https://www.facebook.com/${user.facebook}`}>
+                <FontAwesomeIcon icon={['fab', 'facebook']} />
               </a>
             </li>
             <li>
-              <a
-                href={`https://www.linkedin.com/in/${user.linkedin}`}
-                className="icon fa-linkedin"
-              >
-                <span className="label">LinkedIn</span>
+              <a href={`https://www.linkedin.com/in/${user.linkedin}`}>
+                <FontAwesomeIcon icon={['fab', 'linkedin']} />
               </a>
             </li>
           </ul>
