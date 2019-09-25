@@ -1,7 +1,20 @@
 import React from 'react'
 import { createDateFormat } from '../lib/utils'
 
-const Slides = ({ items, user }) => {
+export type Item = {
+  pubDate: string
+  guid: string
+  link: string
+  thumbnail: string
+  title: string
+}
+
+type SlidesProps = {
+  items: Item[]
+  user: string
+}
+
+const Slides: React.FC<SlidesProps> = ({ items, user }) => {
   const slides = items.map(item => {
     const { pubDate, guid, link, thumbnail, title } = item
     const createdAt = createDateFormat(pubDate, 'YYYY-MM-DD')
@@ -25,10 +38,7 @@ const Slides = ({ items, user }) => {
       <div className="row">{slides}</div>
       <ul className="actions">
         <li>
-          <a
-            href={`https://speakerdeck.com/${user}`}
-            className="button"
-          >
+          <a href={`https://speakerdeck.com/${user}`} className="button">
             Show More Slides
           </a>
         </li>

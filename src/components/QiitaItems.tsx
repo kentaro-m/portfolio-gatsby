@@ -1,7 +1,21 @@
 import React from 'react'
 import { createDateFormat } from '../lib/utils'
 
-const QiitaItems = ({ posts, user }) => {
+export type Post = {
+  node: {
+    id: string
+    title: string
+    created_at: string
+    url: string
+  }
+}
+
+type QiitaItemsProps = {
+  posts: Post[]
+  user: string
+}
+
+const QiitaItems: React.FC<QiitaItemsProps> = ({ posts, user }) => {
   const items = posts.map(post => {
     const { id, title, created_at, url } = post.node
     const createdAt = createDateFormat(created_at, 'YYYY-MM-DD')
@@ -22,10 +36,7 @@ const QiitaItems = ({ posts, user }) => {
       <ul className="alt">{items}</ul>
       <ul className="actions">
         <li>
-          <a
-            href={`https://qiita.com/${user}`}
-            className="button"
-          >
+          <a href={`https://qiita.com/${user}`} className="button">
             Show More Items
           </a>
         </li>
