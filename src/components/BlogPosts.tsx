@@ -1,7 +1,21 @@
 import React from 'react'
 import { createDateFormat } from '../lib/utils'
 
-const BlogPosts = ({ posts, blogUrl }) => {
+export type Post = {
+  node: {
+    id: string
+    pubDate: string
+    link: string
+    title: string
+  }
+}
+
+type BlogPostsProps = {
+  posts: Post[]
+  blogUrl: string
+}
+
+const BlogPosts: React.FC<BlogPostsProps> = ({ posts, blogUrl }) => {
   const items = posts.map(post => {
     const { id, pubDate, link, title } = post.node
     const createdAt = createDateFormat(pubDate, 'YYYY-MM-DD')

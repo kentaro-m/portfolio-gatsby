@@ -1,23 +1,38 @@
 import React from 'react'
-import Img from "gatsby-image"
+import Img from 'gatsby-image'
 import { graphql, useStaticQuery } from 'gatsby'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faTwitter, faGithub, faFacebook, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import {
+  faTwitter,
+  faGithub,
+  faFacebook,
+  faLinkedin,
+} from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 library.add(faTwitter, faGithub, faFacebook, faLinkedin)
 
-const Header = ({ user }) => {
+type HeaderProps = {
+  user: {
+    name: string | ''
+    github: string | ''
+    twitter: string | ''
+    facebook: string | ''
+    linkedin: string | ''
+  }
+}
+
+const Header: React.FC<HeaderProps> = ({ user }) => {
   const data = useStaticQuery(graphql`
-  {
-    avatar: file(relativePath: { eq: "avatar.jpeg" }) {
-      childImageSharp {
-        fixed(width: 100, height: 100) {
-          ...GatsbyImageSharpFixed
+    {
+      avatar: file(relativePath: { eq: "avatar.jpeg" }) {
+        childImageSharp {
+          fixed(width: 100, height: 100) {
+            ...GatsbyImageSharpFixed
+          }
         }
       }
     }
-  }
   `)
 
   return (

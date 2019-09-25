@@ -126,6 +126,7 @@ module.exports = {
           nFirst: 10
         }
       }
-    }
+    },
+    `gatsby-plugin-typescript`
   ],
 }
