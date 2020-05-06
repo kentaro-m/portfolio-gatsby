@@ -43,7 +43,7 @@ const Header: React.FC<HeaderProps> = ({ user }) => {
         </a>
         <h1>
           <strong>Kentaro Matsushita</strong>{' '}
-          <p>Frontend Developer at DMM GAMES.</p>
+          <p>Frontend Developer at EXNOA LLC.</p>
           <p>Happy coding everyday!</p>
         </h1>
       </div>
